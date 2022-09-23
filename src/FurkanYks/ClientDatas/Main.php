@@ -3,13 +3,12 @@
 namespace FurkanYks\ClientDatas;
 
 use pocketmine\plugin\PluginBase;
-use pocketmine\event\Listener;
 
 use FurkanYks\ClientDatas\ClientData;
 use FurkanYks\ClientDatas\ClientDataCommand;
 use FurkanYks\ClientDatas\DPReceiveEvent;
 
-class Main extends PluginBase implements Listener
+class Main extends PluginBase
 {
 
     public array $property = [];
@@ -30,7 +29,6 @@ class Main extends PluginBase implements Listener
     public function onEnable(): void
     {
         $this->getLogger()->info("§cClientData is loaded!");
-        $this->getServer()->getPluginManager()->registerEvents($this, $this);
         $this->getServer()->getCommandMap()->register("clientdata", new ClientDataCommand($this));
         $this->getServer()->getPluginManager()->registerEvents(new DPReceiveEvent($this), $this);
     }

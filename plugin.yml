@@ -1,0 +1,5 @@
+name: ClientData
+version: 1.0.0
+api: 4.0.0
+main: FurkanYks\ClientDatas\Main
+author: FurkanYks
